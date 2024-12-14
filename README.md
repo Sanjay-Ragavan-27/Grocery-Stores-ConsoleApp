@@ -1,9 +1,6 @@
 # Grocery Stores Console Application
 
-This is a simple Java console application for managing a grocery store's inventory and placing orders. The application allows users to:
-- View a list of available groceries with their prices.
-- Place orders by selecting items and specifying quantities.
-- Calculate and display the total amount of the order.
+A simple Java console application to manage a grocery store's inventory and handle customer orders.
 
 ## Features
 
