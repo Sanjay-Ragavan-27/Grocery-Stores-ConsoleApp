@@ -1,37 +1,46 @@
-# Grocery Stores Console Application
+# Grocery Management Application in Java
 
-A simple Java console application to manage a grocery store's inventory and handle customer orders.
+## Overview
+
+This project implements a **Grocery Management Application** in Java. Users can view a list of available grocery items, place orders by selecting quantities, and calculate the total cost dynamically. The application is interactive and utilizes Java collections to manage items and their prices.
+
+---
 
 ## Features
 
-- **Display Groceries**: Shows the list of groceries available for purchase, including their ID, name, and price.
-- **Place Orders**: Allows users to select items by ID and specify the quantity for each item.
-- **Calculate Total**: Computes the total cost of the selected groceries based on the quantities chosen by the user.
+1. **Grocery Display**: Displays a list of available groceries with their IDs, names, and prices.  
+2. **Order Placement**: Allows users to select grocery items and specify quantities for purchase.  
+3. **Total Calculation**: Dynamically calculates the total cost based on the selected items and quantities.  
+4. **Interactive Menu**: Provides an easy-to-use menu for navigating the application.  
 
-## Methods
+---
 
-### 1. `displayGrocery(Map<Integer, Grocery> grocery)`
-This method displays the available groceries with their respective IDs, names, and prices.
+## Code Structure
 
-### 2. `placeOrder(Map<Integer, Grocery> grocery)`
-This method allows the user to place an order by specifying the grocery ID and quantity. It updates the total price for each item selected and asks whether the user wants to add more items.
+### **Classes**
 
-### 3. `displayTotal(Map<Integer, Grocery> grocery)`
-This method displays the total amount of the order after the user has finished selecting items.
+| Class      | Description                                                                  |
+|------------|------------------------------------------------------------------------------|
+| `Grocery`  | Represents a grocery item with attributes like name, price, and total cost.  |
+| `Main`     | Coordinates the application flow, manages grocery data, and handles user interaction. |
 
-## Class Structure
+### **Main Class Methods**
 
-### `Grocery` Class
-The `Grocery` class represents an individual grocery item. It contains:
-- `name`: The name of the grocery item (e.g., Biscuit, Rice, etc.).
-- `price`: The price of the grocery item.
-- `total`: A static variable that tracks the total cost of all selected groceries.
-- `itemCount`: A static variable that tracks the number of groceries in the inventory.
+| Method                  | Description                                                                  |
+|-------------------------|------------------------------------------------------------------------------|
+| `displayGrocery()`      | Displays the list of available groceries.                                    |
+| `placeOrder()`          | Handles the process of selecting groceries and specifying quantities.        |
+| `displayTotal()`        | Calculates and displays the total cost of the order.                        |
 
-### `Main` Class
-The `Main` class contains the main logic for displaying groceries, placing orders, and calculating the total. It uses a `Map` to store the grocery items, where the key is an integer (representing the grocery ID), and the value is a `Grocery` object.
+---
 
-## Example Usage
+## How to Use
+
+1. Clone this repository or copy the code.  
+2. Compile and run the `Main` class.  
+3. View the available grocery items and place your order.  
+
+### Example Code
 
 ```java
 public class Main {
@@ -40,8 +49,37 @@ public class Main {
         grocery.put(1, new Grocery("Biscuit", 30));
         grocery.put(3, new Grocery("Rice", 50));
         grocery.put(4, new Grocery("Sugar", 40));
-        grocery.get(0).itemCount += 4; // Set total grocery items
+        grocery.get(0).itemCount += 4;
 
-        displayGrocery(grocery);  // Display grocery list and start ordering
+        displayGrocery(grocery);
     }
 }
+```
+
+---
+
+## Sample Output
+
+```
+ID:1 Biscuit Rs.30
+ID:3 Rice Rs.50
+ID:4 Sugar Rs.40
+Enter the id of the grocery: 1
+Enter the quantity of the grocery: 2
+Add another grocery(Y/N): Y
+Enter the id of the grocery: 3
+Enter the quantity of the grocery: 1
+Add another grocery(Y/N): N
+Total amount: Rs. 110
+```
+
+---
+
+## Customization
+
+- Add more grocery items to the catalog.  
+- Implement user authentication for personalized orders.  
+- Save order history to a file for persistence.  
+- Enhance the interface with categorized grocery lists (e.g., fruits, vegetables, grains).  
+
+---
